@@ -83,6 +83,10 @@ getInstruction(
             document.querySelector(
               "#mashedPotatoes"
             ).innerHTML += "<li>Mashed potatoes are ready!</li>";
+
+            
+
+            document.querySelector("#mashedPotatoesImg").hidden = false;
           });
         });
       });
@@ -125,6 +129,8 @@ obtainInstruction("steak", 0)
   .then((step7) => {
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`;
     document.querySelector("#steak").innerHTML += "<li>Stake is ready!</li>";
+
+    document.querySelector("#steakImg").hidden = false;
     
   });
 
@@ -147,6 +153,8 @@ async function makeBroccoli() {
   document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`;
 
   document.querySelector("#broccoli").innerHTML += "<li>Broccoli is ready!</li>";
+
+  document.querySelector("#broccoliImg").hidden = false;
 }
 
 makeBroccoli();
@@ -155,3 +163,19 @@ makeBroccoli();
 
 // Bonus 2 - Promise all
 // ...
+
+Promise.all([obtainInstruction("brusselsSprouts",0),obtainInstruction("brusselsSprouts",1),obtainInstruction("brusselsSprouts",2),
+obtainInstruction("brusselsSprouts",3),obtainInstruction("brusselsSprouts",4),obtainInstruction("brusselsSprouts",5),obtainInstruction("brusselsSprouts",6),
+obtainInstruction("brusselsSprouts",7)]).then((values)=>{
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${values[0]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${values[1]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${values[2]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${values[3]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${values[4]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${values[5]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${values[6]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${values[7]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += "<li>Brussels sprouts are ready! </li>";
+
+  document.querySelector("#brusselsSproutsImg").hidden = false;
+})
