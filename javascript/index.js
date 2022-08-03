@@ -80,6 +80,9 @@ getInstruction(
             document.querySelector(
               "#mashedPotatoes"
             ).innerHTML += `<li>${step5}</li>`;
+            document.querySelector(
+              "#mashedPotatoes"
+            ).innerHTML += "<li>Mashed potatoes are ready!</li>";
           });
         });
       });
@@ -121,7 +124,8 @@ obtainInstruction("steak", 0)
   })
   .then((step7) => {
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`;
-    return obtainInstruction("steak", 8);
+    document.querySelector("#steak").innerHTML += "<li>Stake is ready!</li>";
+    
   });
 
 // Iteration 3 using async/await
@@ -141,9 +145,13 @@ async function makeBroccoli() {
   document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`;
   let step7 = await obtainInstruction("broccoli", 6);
   document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`;
+
+  document.querySelector("#broccoli").innerHTML += "<li>Broccoli is ready!</li>";
 }
 
 makeBroccoli();
+
+
 
 // Bonus 2 - Promise all
 // ...
