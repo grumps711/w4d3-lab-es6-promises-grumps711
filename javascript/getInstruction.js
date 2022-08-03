@@ -25,6 +25,7 @@ function getInstruction(food, step, callback, errorCallback) {
         errorCallback("Instruction step does not exist!");
       } else {
         callback(instruction);
+        //( boil water) => {document.querySelector("#mashedPotatoes").innerHTML += `<li>${boil water}</li>`;
       }
 
     }, Math.floor(Math.random() * 1000));
